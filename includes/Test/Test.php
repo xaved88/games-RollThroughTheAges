@@ -1,6 +1,6 @@
 <?php
 
-namespace Test;
+namespace RTTA\Test;
 
 use BaseModel;
 
@@ -23,6 +23,6 @@ class Test extends BaseModel
 
     public function test()
     {
-        echo $this->testTwo->test();
+        return $this->testTwo->test();
     }
 }

@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+define('APP_ROOT_DIR', getcwd() . '/');
+define('APP_INCLUDES_DIR', APP_ROOT_DIR . 'includes/');
+define('APP_SYSTEM_DIR', APP_ROOT_DIR . 'system/');
+define('APP_PHPUNIT_DIR', APP_ROOT_DIR . 'vendor/phpunit/phpunit/');
+
+use Jane\Jane;
+
+require 'system/jane/jane.php';
+$jane = new Jane();
+
+require_once APP_PHPUNIT_DIR . "phpunit";

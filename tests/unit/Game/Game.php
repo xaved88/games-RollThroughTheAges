@@ -8,12 +8,12 @@ class GameTest extends TestCase
     public function testThis()
     {
         $testTwo = $this->createMock(TestTwo::class);
-
-        $subject = new Test($testTwo);
+        $testConfigValue = 'we be testing';
+        $subject = new Test($testTwo,$testConfigValue);
 
         $value = "whaoeutaoeu";
 
-        $testTwo
+        $testTwo->expects($this->exactly(1))
             ->method('test')
             ->willReturn($value);
 

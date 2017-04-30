@@ -1,11 +1,11 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-class TestTest extends TestCase
+class OriginalTest extends TestCase
 {
     public function testPushAndPop()
     {
-        $stack = [1];
+        $stack = [];
         $this->assertEquals(0, count($stack));
 
         array_push($stack, 'foo');

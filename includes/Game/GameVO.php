@@ -1,7 +1,7 @@
 <?php
 namespace RTTA\Game;
 
-use BaseVO;
+use Jane\Base\BaseVO;
 use RTTA\Dice\DiceVO;
 use RTTA\Player\PlayerVO;
 

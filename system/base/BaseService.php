@@ -2,7 +2,6 @@
 
 namespace Jane\Base;
 
-abstract class BaseVO
+abstract class BaseService
 {
-
 }

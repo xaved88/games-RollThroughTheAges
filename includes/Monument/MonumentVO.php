@@ -2,7 +2,7 @@
 
 namespace RTTA\Monument;
 
-use BaseVO;
+use Jane\Base\BaseVO;
 use RTTA\Bonus\BonusVO;
 
 class MonumentVO extends BaseVO

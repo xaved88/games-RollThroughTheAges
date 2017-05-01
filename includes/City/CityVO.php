@@ -2,7 +2,7 @@
 
 namespace RTTA\City;
 
-use BaseVO;
+use Jane\Base\BaseVO;
 use RTTA\Bonus\BonusVO;
 
 class CityVO extends BaseVO

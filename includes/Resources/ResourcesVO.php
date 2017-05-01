@@ -2,7 +2,7 @@
 
 namespace RTTA\Resources;
 
-use BaseVO;
+use Jane\Base\BaseVO;
 
 class ResourcesVO extends BaseVO
 {

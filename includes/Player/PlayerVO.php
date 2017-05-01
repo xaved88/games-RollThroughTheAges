@@ -1,7 +1,7 @@
 <?php
 namespace RTTA\Player;
 
-use BaseVO;
+use Jane\Base\BaseVO;
 use RTTA\Bonus\BonusVO;
 use RTTA\City\CityVO;
 use RTTA\Development\DevelopmentVO;

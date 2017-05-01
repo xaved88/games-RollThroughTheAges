@@ -2,7 +2,7 @@
 
 namespace RTTA\Test;
 
-use BaseModel;
+use Jane\Base\BaseModel;
 
 class Test extends BaseModel
 {
@@ -37,6 +37,10 @@ class Test extends BaseModel
     public function test()
     {
         return $this->testTwo->test();
+    }
+
+    public function testForTheServiceCall($a,$b){
+        return $a . "-" . $b;
     }
 
     /**

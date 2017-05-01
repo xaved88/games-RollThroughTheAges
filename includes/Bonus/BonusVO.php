@@ -2,7 +2,7 @@
 
 namespace RTTA\Bonus;
 
-use BaseVO;
+use Jane\Base\BaseVO;
 
 abstract class BonusVO extends BaseVO
 {

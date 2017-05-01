@@ -2,7 +2,7 @@
 
 namespace RTTA\Development;
 
-use BaseVO;
+use Jane\Base\BaseVO;
 use RTTA\Bonus\BonusVO;
 
 class DevelopmentVO extends BaseVO

@@ -2,7 +2,7 @@
 
 namespace RTTA\Test;
 
-use BaseModel;
+use Jane\Base\BaseModel;
 
 class TestTwo extends BaseModel
 {

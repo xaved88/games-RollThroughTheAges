@@ -1,8 +1,7 @@
 <?php
 namespace RTTA\Dice;
 
-use BaseVO;
-use RTTA\Player\PlayerVO;
+use Jane\Base\BaseVO;
 use RTTA\Resources\ResourcesVO;
 
 class DiceSidesVO extends BaseVO

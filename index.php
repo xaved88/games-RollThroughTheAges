@@ -1,8 +1,7 @@
 <?php
 
-
 define('APP_ROOT_DIR', getcwd() . '/');
-define('SERVICE_NAMESPACE','RTTA\Service');
+define('APP_PROJECT_NAMESPACE','RTTA');
 
 use Jane\Jane;
 
@@ -10,12 +9,6 @@ require 'system/jane/startup.php';
 
 /**
  * @var Jane $jane
- */
-
-
-use RTTA\Test\Test;
-/**
- * @var Test $test
  */
 
 $path = $_GET['path'];

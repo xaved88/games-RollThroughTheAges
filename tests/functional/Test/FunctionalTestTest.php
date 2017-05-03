@@ -6,11 +6,10 @@ use RTTA\Test\TestTwo;
 
 require_once APP_ROOT_DIR . 'tests/functional/BaseFunctional.php';
 
-class TestFunctional extends BaseFunctional
+class FunctionalTestTest extends BaseFunctional
 {
     public function testThis()
     {
-
         $serviceName   = "Test";
         $serviceMethod = "testMethod";
         $params        = ['one', 'two'];

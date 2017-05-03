@@ -31,8 +31,8 @@ class Jane
     public function init()
     {
         $this->components = [];
+        $this->initiateAutoloadRegistry();
         $this->autoloadDirectory(APP_SYSTEM_DIR, ['php']);
-        $this->autoloadDirectory(APP_INCLUDES_DIR, ['php']);
         $this->loadConfigs();
     }
 
@@ -49,17 +49,18 @@ class Jane
 
         $this->autoloadDirectory(APP_SERVICE_DIR, ['php']);
 
-        $fullServiceName = SERVICE_NAMESPACE . '\\' . $serviceName;
+        $fullServiceName = APP_SERVICE_NAMESPACE . '\\' . $serviceName;
         if (!class_exists($fullServiceName)) {
             throw new Exception("Error - service $fullServiceName doesn't exist");
         }
 
         $service = $this->getComponent($fullServiceName);
-        if(!method_exists($service,$methodName)){
+        if (!method_exists($service, $methodName)) {
             throw new Exception("Method call to $serviceName :: $methodName - method doesn't exist");
         }
 
         $ret = $service->$methodName(...$params);
+
         return $ret;
 
     }
@@ -129,6 +130,22 @@ class Jane
         return $parsedValueKeys;
     }
 
+    private function initiateAutoloadRegistry()
+    {
+        spl_autoload_register([$this, 'autoloadRegistryCallback']);
+    }
+
+    /**
+     * @param string $class
+     */
+    private function autoloadRegistryCallback(string $class)
+    {
+        $pieces = explode('\\', $class);
+        if (APP_PROJECT_NAMESPACE === array_shift($pieces)) {
+            include_once APP_INCLUDES_DIR . implode('\\', $pieces) . ".php";
+        }
+    }
+
     /**
      * @param string $directory
      * @param array  $fileTypes
@@ -164,11 +181,12 @@ class Jane
     }
 
     /**
-     * @param $key
+     * @param string $key
      *
      * @return mixed
+     * @throws Exception
      */
-    private function getValue($key)
+    private function getValue(string $key)
     {
         if (!isset($this->values[$key])) {
 

@@ -11,6 +11,16 @@ use RTTA\Resources\ResourcesVO;
 class PlayerVO extends BaseVO
 {
     /**
+     * @var int - null for AI
+     */
+    public $playerId;
+
+    /**
+     * @var int - seatId is the relative turn / id in the game, starting at 0.
+     */
+    public $seatId;
+
+    /**
      * @var CityVO[]
      */
     public $cities;

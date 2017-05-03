@@ -2,6 +2,7 @@
 <?php
 
 define('APP_ROOT_DIR', getcwd() . '/');
+define('APP_PROJECT_NAMESPACE','RTTA');
 define('APP_PHPUNIT_DIR', APP_ROOT_DIR . 'vendor/phpunit/phpunit/');
 
 use Jane\Jane;

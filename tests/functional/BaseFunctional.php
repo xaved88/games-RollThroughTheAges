@@ -1,7 +1,8 @@
 <?php
+
+namespace RTTA\TestsFunctional;
+
 use PHPUnit\Framework\TestCase;
-use RTTA\Test\Test;
-use RTTA\Test\TestTwo;
 
 abstract class BaseFunctional extends TestCase
 {

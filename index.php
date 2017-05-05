@@ -2,6 +2,7 @@
 
 define('APP_ROOT_DIR', getcwd() . '/');
 define('APP_PROJECT_NAMESPACE','RTTA');
+define('APP_FUNCTIONAL_TESTS_NAMESPACE','TestsFunctional');
 
 use Jane\Jane;
 

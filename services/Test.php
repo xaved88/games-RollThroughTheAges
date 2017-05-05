@@ -3,10 +3,18 @@
 namespace RTTA\Service;
 
 use Jane\Base\BaseService;
+use Jane\Base\BaseVO;
 use RTTA\Test\Test as TestModel;
+use RTTA\Test\TestVO;
 
 class Test extends BaseService
 {
+
+    const SERVICE_NAME               = 'Test';
+    const METHOD_TEST_METHOD         = 'testMethod';
+    const METHOD_TEST_VO_CREATION    = 'testVOCreation';
+    const METHOD_TEST_VO_CONSTRUCTOR = 'testVOFillingInConstructor';
+
     /**
      * @var TestModel
      */
@@ -33,7 +41,28 @@ class Test extends BaseService
     }
 
 
-    public function testMethod($a,$b){
-        return $this->testModel->testForTheServiceCall($a,$b);
+    public function testMethod($a, $b)
+    {
+        return $this->testModel->testForTheServiceCall($a, $b);
+    }
+
+    /**
+     * @param string $voName
+     *
+     * @return mixed
+     */
+    public function testVOCreation(string $voName)
+    {
+        return new $voName();
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return TestVO
+     */
+    public function testVOFillingInConstructor(array $data)
+    {
+        return new TestVO($data);
     }
 }

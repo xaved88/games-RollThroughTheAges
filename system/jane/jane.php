@@ -3,6 +3,7 @@
 namespace Jane;
 
 use Exception;
+use Jane\Base\BaseVO;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use ReflectionException;
@@ -49,7 +50,7 @@ class Jane
 
         $this->autoloadDirectory(APP_SERVICE_DIR, ['php']);
 
-        $fullServiceName = APP_SERVICE_NAMESPACE . '\\' . $serviceName;
+        $fullServiceName = APP_PROJECT_NAMESPACE . '\\' . APP_SERVICE_NAMESPACE . '\\' . $serviceName;
         if (!class_exists($fullServiceName)) {
             throw new Exception("Error - service $fullServiceName doesn't exist");
         }
@@ -61,8 +62,7 @@ class Jane
 
         $ret = $service->$methodName(...$params);
 
-        return $ret;
-
+        return json_encode($ret);
     }
 
     /**
@@ -142,7 +142,15 @@ class Jane
     {
         $pieces = explode('\\', $class);
         if (APP_PROJECT_NAMESPACE === array_shift($pieces)) {
-            include_once APP_INCLUDES_DIR . implode('\\', $pieces) . ".php";
+            if ($pieces[0] === APP_FUNCTIONAL_TESTS_NAMESPACE) {
+                array_shift($pieces);
+                include_once APP_FUNCTIONAL_TESTS_DIR . implode('\\', $pieces) . ".php";
+            } elseif ($pieces[0] === APP_SERVICE_NAMESPACE) {
+                array_shift($pieces);
+                include_once APP_SERVICE_DIR . implode('\\', $pieces) . ".php";
+            } else {
+                include_once APP_INCLUDES_DIR . implode('\\', $pieces) . ".php";
+            }
         }
     }
 

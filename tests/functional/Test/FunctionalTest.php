@@ -1,12 +1,10 @@
 <?php
-use PHPUnit\Framework\TestCase;
-use RTTA\Test\Test;
-use RTTA\Test\TestTwo;
 
+namespace RTTA\TestsFunctional\Test;
 
-require_once APP_ROOT_DIR . 'tests/functional/BaseFunctional.php';
+use RTTA\TestsFunctional\BaseFunctional;
 
-class FunctionalTestTest extends BaseFunctional
+class FunctionalTest extends BaseFunctional
 {
     public function testThis()
     {

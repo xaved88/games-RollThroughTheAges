@@ -58,4 +58,9 @@ class Test extends BaseModel
     {
         return $this->dataValue;
     }
+
+    public function doesDBConnectionExist()
+    {
+        return false;
+    }
 }

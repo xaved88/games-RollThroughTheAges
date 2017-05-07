@@ -14,6 +14,6 @@ class GameCreationTest extends BaseGameTest
         $params = [$options];
         $result = $this->makeServiceCall(Game::SERVICE_NAME, Game::METHOD_CREATE, $params);
 
-        print_r($result);
+        $this->assertTrue(true);
     }
 }

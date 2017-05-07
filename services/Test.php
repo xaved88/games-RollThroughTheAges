@@ -14,6 +14,7 @@ class Test extends BaseService
     const METHOD_TEST_METHOD         = 'testMethod';
     const METHOD_TEST_VO_CREATION    = 'testVOCreation';
     const METHOD_TEST_VO_CONSTRUCTOR = 'testVOFillingInConstructor';
+    const METHOD_TEST_DB_CONNECTION  = 'testDBConnection';
 
     /**
      * @var TestModel
@@ -64,5 +65,11 @@ class Test extends BaseService
     public function testVOFillingInConstructor(array $data)
     {
         return new TestVO($data);
+    }
+
+
+    public function testDBConnection()
+    {
+        return $this->testModel->doesDBConnectionExist();
     }
 }

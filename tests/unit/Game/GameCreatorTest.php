@@ -1,4 +1,5 @@
 <?php
+use Jane\Base\BaseVO;
 use PHPUnit\Framework\TestCase;
 use RTTA\AI\AIPlayerVO;
 use RTTA\Game\GameCreator;
@@ -38,6 +39,7 @@ class GameCreatorTest extends TestCase
 
         $gameVO = $this->subject->startNewGame($newGameOptions);
 
+        $this->assertTrue($gameVO instanceof GameVO && $gameVO instanceof BaseVO);
 
     }
 }

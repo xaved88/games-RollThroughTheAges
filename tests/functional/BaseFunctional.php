@@ -26,7 +26,9 @@ abstract class BaseFunctional extends TestCase
 
         $context = stream_context_create($opts);
 
-        return file_get_contents($url, false, $context);
+        $ret = file_get_contents($url, false, $context);
+
+        return json_decode($ret,true);
     }
 
     /**
